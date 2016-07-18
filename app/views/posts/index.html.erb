@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+
+<%= link_to 'New Post', new_post_path %>
+
+<div class='row'>   
+  <% @posts.each do |post| %>
+    <div class='col-md-6'>
+      <div class="media">
+        <h4 class="media-heading"><%= post.title %></h4>
+        <div class="media-body">
+          <%= post.description %>
+          <div>
+            <%= link_to 'Show', post %>
+            <%= link_to 'Edit', edit_post_path(post) %>
+            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<br>
