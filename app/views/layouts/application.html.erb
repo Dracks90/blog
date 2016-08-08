@@ -8,7 +8,7 @@
     <%= javascript_include_tag 'application' %>
   </head>
 
-  <body>
+  <body class='background'>
     <nav class="navbar navbar-fixed-top navbar-dark bg-inverse">
     	<div class='container'>
 				<%= link_to 'Dracks', root_path, class: 'navbar-brand'  %>
@@ -39,7 +39,7 @@
 				</ul>
   		</div>
     </nav>
-    <div class='container'>
+    <div class='container foreground'>
     	<%= yield %>
 	</div>
   </body>

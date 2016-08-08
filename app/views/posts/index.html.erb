@@ -1,31 +1,25 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Posts</h1>
 
 <% if policy(:post).new? %>
   <%= link_to 'New Post', new_post_path, class: 'btn btn-link' %>
 <% end %>
 
-<div class='row'>   
   <% @posts.each do |post| %>
-    <div class='col-md-6'>
-      <div class="media">
-        <h4 class="media-heading">
-          <% if policy(post).show? %>
-            <%= link_to post.title, post %>
-          <% end %>
-        </h4>
-        <div class="media-body">
-          <%= post.description %>
-          <div>
-            <% if policy(post).edit? %> 
-              <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-link' %>
-            <% end %>
-            <% if policy(post).destroy? %>
-              <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-link' %>
-            <% end %>
-          </div>
-        </div>
+  <div class="media">
+    <h4 class="media-heading">
+      <% if policy(post).show? %>
+        <%= link_to post.title, post %>
+      <% end %>
+    </h4>
+    <div class="media-body">
+      <%= post.description %>
+      <div>
+        <% if policy(post).edit? %> 
+          <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-link' %>
+        <% end %>
+        <% if policy(post).destroy? %>
+          <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-link' %>
+        <% end %>
       </div>
     </div>
   <% end %>

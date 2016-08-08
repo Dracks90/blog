@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      comment: Komentarz
+    attributes:
+      comment:
+        body: Komentuj
